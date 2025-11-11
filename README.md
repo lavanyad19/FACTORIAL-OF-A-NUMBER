@@ -28,56 +28,58 @@ APPARATUS REQUIRED: Personal computer with Keil software
 • End
 
 **FLOW CHART:**
+
+
 <img width="261" height="308" alt="image" src="https://github.com/user-attachments/assets/bffe89f6-3ba9-4294-b817-8b545f680e66" />
+
+
+
+
 
 **Program:**
 
-ORG 0000H   
+ORG 0000H
 
-MOV A,#04H  
+MOV DPTR,#4500H
 
-MOV R0,A  
+MOVX A,@DPTR
 
-ACALL FACTORIAL  
+MOV R0,A
 
-MOV 40H,A  
+INC DPTR
 
-SJMP THIN  
+ACALL FACTORIAL
 
-FACTORIAL:DEC R0  
+MOVX @DPTR,A 
 
-CJNE R0,#01H,PRODUCT  
+SJMP THIN 
 
-SJMP THICK   
+FACTORIAL: DEC R0
 
-PRODUCT:MOV B,R0  
+CJNE R0,#01H,PRODUCT
 
-MUL AB  
+SJMP THICK 
 
-ACALL FACTORIAL  
+PRODUCT: MOV B,R0
 
-THICK: RET  
+MUL AB
 
-THIN:  
+ACALL FACTORIAL
+
+THICK: RET 
+
+THIN: RET
 
 END
 
 **Output:**  
-
-<br>
-<br>
-<br>
-
+![WhatsApp Image 2025-11-11 at 19 16 01_4129d41d](https://github.com/user-attachments/assets/3f15eae6-867f-4c2b-9703-e33c8bd07d5e)
 
 
 **Manual Calculations:**  
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+![WhatsApp Image 2025-11-11 at 19 17 58_e023454e](https://github.com/user-attachments/assets/914ae9a0-9f50-4083-84d1-cbbffbbc8fc1)
+
 
 
 
